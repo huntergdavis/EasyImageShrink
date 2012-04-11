@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<Button android:text="Load Image" android:layout_alignParentTop="true" android:id="@+id/loadButton" android:layout_width="fill_parent" android:layout_height="wrap_content"></Button>
+	<ImageView android:id="@+id/ImageView01" android:scaleType="fitStart"
+		android:layout_width="wrap_content" android:layout_height="fill_parent" 
+		android:layout_below="@+id/loadButton"/>  
+
+
+	<TableRow android:orientation="horizontal"
+	 android:layout_width="fill_parent"
+		android:layout_height="wrap_content" android:id="@+id/tableRowText"
+		android:layout_above="@+id/tableRow1"
+		android:visibility="visible" 
+		android:layout_gravity="fill_horizontal|bottom">
+	<TextView android:id="@+id/widthText" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Width"
+		android:layout_weight="1"
+		 />
+	<TextView android:id="@+id/heightText" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:text="Height"
+		android:layout_weight="1"
+		 />		
+	</TableRow>			  
+	<TableRow android:orientation="horizontal"
+	 android:layout_width="fill_parent"
+		android:layout_height="50dip" android:id="@+id/tableRow1"
+		android:layout_above="@+id/saveButton"
+		android:visibility="visible" 
+		android:layout_gravity="fill_horizontal|bottom">
+		<EditText android:layout_width="fill_parent" android:numeric="decimal" android:id="@+id/width" android:layout_weight="1"
+		android:text="Width" android:layout_height="wrap_content"></EditText>
+		<EditText android:layout_width="fill_parent" android:numeric="decimal" android:id="@+id/height" android:layout_weight="1"
+		android:text="Height" android:layout_height="wrap_content"></EditText>
+	</TableRow>
+	
+    <Button android:text="Save Scaled Image"  android:id="@+id/saveButton" android:layout_width="fill_parent" android:layout_height="wrap_content"
+    android:layout_above="@+id/adView"></Button>
+    
+	<com.google.ads.AdView android:id="@+id/adView"
+		android:layout_alignParentBottom="true" android:layout_width="wrap_content"
+		android:layout_height="wrap_content" ads:adUnitId="a14decf6ae1f797"
+		ads:adSize="BANNER" ads:loadAdOnCreate="false" />
+	    
+</RelativeLayout>
